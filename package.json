@@ -1,0 +1,19 @@
+{
+  "name": "wbdv-fa20-ebenny-project-node",
+  "version": "1.0.0",
+  "description": "server for project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eric-benny/wbdv-fa20-ebenny-project-node.git"
+  },
+  "author": "Eric Benny",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eric-benny/wbdv-fa20-ebenny-project-node/issues"
+  },
+  "homepage": "https://github.com/eric-benny/wbdv-fa20-ebenny-project-node#readme"
+}
