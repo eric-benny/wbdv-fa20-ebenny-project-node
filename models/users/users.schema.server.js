@@ -1,11 +1,11 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var userSchema = mongoose.Schema({
+const usersSchema = mongoose.Schema({
                                      username: String,
                                      password: String,
                                      firstName: String,
                                      lastName: String,
                                      email: String
-                                 }, {collection: 'user'});
+                                 }, {collection: 'users'});
 
-module.exports = userSchema;
+module.exports = usersSchema;
