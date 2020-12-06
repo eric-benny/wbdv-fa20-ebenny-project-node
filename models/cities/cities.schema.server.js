@@ -6,8 +6,7 @@ const citySchema = mongoose.Schema({
     name: String,
     country: String,
     state: String,
-    notes: String,
-    places: [String]
+    notes: String
     }, {collection: 'cities'});
 
 module.exports = citySchema;

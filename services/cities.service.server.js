@@ -6,4 +6,16 @@ const findCityById = (cid) => citiesDao.findCityById(cid);
 
 const findCitiesForUser = (uid) => citiesDao.findCitiesForUser(uid);
 
-module.exports = { findAllCities, findCityById, findCitiesForUser };
+const createCityForUser = (uid, city) => {
+    const newCity = {
+        infoId: city.id,
+        userId: uid,
+        name: city.name,
+        country: city.country,
+        state: city.state,
+        notes: ''
+    }
+    return citiesDao.createCity(newCity)
+}
+
+module.exports = { findAllCities, findCityById, findCitiesForUser, createCityForUser };
