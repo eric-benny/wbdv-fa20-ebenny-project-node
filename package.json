@@ -18,6 +18,7 @@
   "homepage": "https://github.com/eric-benny/wbdv-fa20-ebenny-project-node#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "mongoose": "^5.10.15"
   }
 }

@@ -1,6 +1,13 @@
 const express = require("express");
 const app = express();
 
+const session = require('express-session')
+app.use(session({
+                    resave: false,
+                    saveUninitialized: true,
+                    secret: 'any string'
+                }));
+
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/traveler',
                  {useNewUrlParser: true,
