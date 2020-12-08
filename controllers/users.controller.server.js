@@ -26,4 +26,9 @@ module.exports = (app) => {
                     res.sendStatus(user)
                 }
             }));
+
+    app.get("/api/users/logout", (req, res) => {
+        req.session.destroy();
+        res.send(200)
+    })
 };
