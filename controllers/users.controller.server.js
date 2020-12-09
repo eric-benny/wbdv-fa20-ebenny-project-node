@@ -29,6 +29,16 @@ module.exports = (app) => {
 
     app.get("/api/users/logout", (req, res) => {
         req.session.destroy();
-        res.send(200)
+        res.sendStatus(200)
+    })
+
+    app.get("/api/users/profile", (req, res) => {
+        console.log(req.session["profile"])
+        const user = req.session["profile"];
+        if (user) {
+            res.send(user)
+        } else {
+            res.send({})
+        }
     })
 };

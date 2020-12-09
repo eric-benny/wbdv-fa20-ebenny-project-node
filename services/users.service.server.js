@@ -23,7 +23,7 @@ const register = (userDetails) => {
 };
 
 const login = (userCredentials) => {
-    console.log(userCredentials)
+    //console.log(userCredentials)
     const username = userCredentials.username;
     const password = userCredentials.password;
 
