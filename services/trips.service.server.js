@@ -6,4 +6,6 @@ const findTripById = (tid) => tripsDao.findTripById(tid);
 
 const findAllTripsForUser = (userId) => tripsDao.findAllTripsForUser(userId);
 
-module.exports = { findAllTrips, findTripById, findAllTripsForUser };
+const deleteTrip = (tid) => tripsDao.deleteTrip(tid)
+
+module.exports = { findAllTrips, findTripById, findAllTripsForUser, deleteTrip };

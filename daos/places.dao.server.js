@@ -10,4 +10,20 @@ const findPlacesForCity = (cid) => placesModel.find({cityId: cid});
 
 const createPlace = (place) => placesModel.create(place);
 
-module.exports = { findAllPlaces, findPlaceById, findPlacesForUser, createPlace, findPlacesForCity };
+const deletePlace = (pid) => placesModel.remove({_id: pid});
+
+const deletePlacesForCity = (cid) => placesModel.remove({cityId: cid});
+
+const updatePlace = (pid, place) => placesModel.update({_id: pid},
+                                                     {$set: place});
+
+module.exports = {
+    findAllPlaces,
+    findPlaceById,
+    findPlacesForUser,
+    createPlace,
+    findPlacesForCity,
+    deletePlace,
+    deletePlacesForCity,
+    updatePlace
+};

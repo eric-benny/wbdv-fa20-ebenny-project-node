@@ -1,4 +1,4 @@
-const placesService = require("../services/places.service.server")
+const placesService = require("../services/places.service.server");
 
 module.exports = (app) => {
 
@@ -17,4 +17,10 @@ module.exports = (app) => {
     app.post('/api/users/:uid/cities/:cid/places', (req, res) =>
         placesService.createPlaceForUser(req.params.uid, req.params.cid, req.body)
             .then(place => res.send(place)));
-}
+    app.delete('/api/places/:pid', (req, res) =>
+        placesService.deletePlace(req.params.pid)
+            .then(response => res.send(response)));
+    app.put('/api/places/:pid', (req, res) =>
+        placesService.updatePlace(req.params.pid, req.body)
+            .then(place => res.send(place)));
+};

@@ -10,4 +10,7 @@ module.exports = (app) => {
     app.get('/api/users/:uid/trips', (req, res) =>
         tripsService.findAllTripsForUser(req.params.uid)
             .then(trips => res.json(trips)));
+    app.delete('/api/trips/:tid', (req, res) =>
+        tripsService.deleteTrip(req.params.tid)
+            .then(response => res.send(response)));
 };

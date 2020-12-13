@@ -17,8 +17,23 @@ const createPlaceForUser = (uid, cid, place) => {
         type: place.type,
         details: place.details,
         notes: ''
-    }
+    };
     return placesDao.createPlace(newPlace)
-}
+};
 
-module.exports = { findAllPlaces, findPlaceById, findPlacesForUser, createPlaceForUser, findPlacesForCity };
+const deletePlace = (pid) => placesDao.deletePlace(pid);
+
+const deletePlacesForCity = (cid) => placesDao.deletePlacesForCity(cid);
+
+const updatePlace = (pid, place) => placesDao.updatePlace(pid, place);
+
+module.exports = {
+    findAllPlaces,
+    findPlaceById,
+    findPlacesForUser,
+    createPlaceForUser,
+    findPlacesForCity,
+    deletePlace,
+    deletePlacesForCity,
+    updatePlace
+};

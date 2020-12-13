@@ -8,4 +8,16 @@ const findCitiesForUser = (uid) => citiesModel.find({userId: uid});
 
 const createCity = (city) => citiesModel.create(city);
 
-module.exports = { findAllCities, findCityById, findCitiesForUser, createCity };
+const deleteCity = (cid) => citiesModel.remove({_id: cid});
+
+const updateCity = (cid, city) => citiesModel.update({_id: cid},
+                                                     {$set: city});
+
+module.exports = {
+    findAllCities,
+    findCityById,
+    findCitiesForUser,
+    createCity,
+    deleteCity,
+    updateCity
+};

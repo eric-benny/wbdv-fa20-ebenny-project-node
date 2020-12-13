@@ -18,4 +18,15 @@ const createCityForUser = (uid, city) => {
     return citiesDao.createCity(newCity)
 }
 
-module.exports = { findAllCities, findCityById, findCitiesForUser, createCityForUser };
+const deleteCity = (cid) => citiesDao.deleteCity(cid);
+
+const updateCity = (cid, city) => citiesDao.updateCity(cid, city);
+
+module.exports = {
+    findAllCities,
+    findCityById,
+    findCitiesForUser,
+    createCityForUser,
+    deleteCity,
+    updateCity
+};

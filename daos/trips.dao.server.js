@@ -6,4 +6,6 @@ const findTripById = (tid) => tripsModel.findById(tid).populate('cities');
 
 const findAllTripsForUser = (userId) => tripsModel.find({userId: userId});
 
-module.exports = { findAllTrips, findTripById, findAllTripsForUser };
+const deleteTrip = (tid) => tripsModel.remove({_id: tid});
+
+module.exports = { findAllTrips, findTripById, findAllTripsForUser, deleteTrip };
