@@ -27,6 +27,8 @@ const deletePlacesForCity = (cid) => placesDao.deletePlacesForCity(cid);
 
 const updatePlace = (pid, place) => placesDao.updatePlace(pid, place);
 
+const addTripToPlace = (pid, tid) => placesDao.addTripToPlace(pid, tid)
+
 module.exports = {
     findAllPlaces,
     findPlaceById,
@@ -35,5 +37,6 @@ module.exports = {
     findPlacesForCity,
     deletePlace,
     deletePlacesForCity,
-    updatePlace
+    updatePlace,
+    addTripToPlace
 };

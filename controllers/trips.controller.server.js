@@ -10,7 +10,22 @@ module.exports = (app) => {
     app.get('/api/users/:uid/trips', (req, res) =>
         tripsService.findAllTripsForUser(req.params.uid)
             .then(trips => res.json(trips)));
+    app.get('/api/users/:uid/trips/attending', (req, res) =>
+        tripsService.findAllTripsAttendingForUser(req.params.uid)
+            .then(trips => res.json(trips)));
     app.delete('/api/trips/:tid', (req, res) =>
         tripsService.deleteTrip(req.params.tid)
             .then(response => res.send(response)));
+    app.post('/api/users/:uid/trips', (req, res) =>
+        tripsService.createTrip(req.params.uid)
+            .then(trip => res.json(trip)));
+    app.put('/api/trips/:tid/cities/:cid', (req, res) =>
+        tripsService.addCityToTrip(req.params.tid, req.params.cid)
+            .then(trip => res.json(trip)));
+    app.put('/api/trips/:tid/', (req, res) =>
+        tripsService.updateTrip(req.params.tid, req.body)
+            .then(trip => res.json(trip)));
+    app.put('/api/trips/:tid/users/:uid', (req, res) =>
+        tripsService.addAttendeeToTrip(req.params.tid, req.params.uid)
+            .then(trip => res.json(trip)));
 };

@@ -23,4 +23,7 @@ module.exports = (app) => {
     app.put('/api/places/:pid', (req, res) =>
         placesService.updatePlace(req.params.pid, req.body)
             .then(place => res.send(place)));
+    app.put('/api/places/:pid/trips/:tid', (req, res) =>
+        placesService.addTripToPlace(req.params.pid, req.params.tid)
+            .then(place => res.send(place)));
 };

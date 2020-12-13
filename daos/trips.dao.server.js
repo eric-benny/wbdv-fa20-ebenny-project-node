@@ -2,10 +2,33 @@ const tripsModel = require('../models/trips/trips.model.server');
 
 const findAllTrips = () => tripsModel.find();
 
-const findTripById = (tid) => tripsModel.findById(tid).populate('cities');
+const findTripById = (tid) => tripsModel.findById(tid).populate('cities').populate('attendees');
 
 const findAllTripsForUser = (userId) => tripsModel.find({userId: userId});
 
 const deleteTrip = (tid) => tripsModel.remove({_id: tid});
 
-module.exports = { findAllTrips, findTripById, findAllTripsForUser, deleteTrip };
+const createTrip = (uid) => tripsModel.create({name: "New Trip", userId: uid});
+
+const addCityToTrip = (tid, cid) => tripsModel.updateOne({_id: tid},
+                                                         {$push: { cities: cid } });
+
+const updateTrip = (tid, trip) => tripsModel.updateOne({_id: tid},
+                                                     {$set: trip});
+
+const addAttendeeToTrip = (tid, uid) => tripsModel.updateOne({_id: tid},
+                                                         {$push: { attendees: uid } });
+
+const findAllTripsAttendingForUser = (userId) => tripsModel.find({attendees: userId});
+
+module.exports = {
+    findAllTrips,
+    findTripById,
+    findAllTripsForUser,
+    deleteTrip,
+    createTrip,
+    addCityToTrip,
+    updateTrip,
+    addAttendeeToTrip,
+    findAllTripsAttendingForUser
+};

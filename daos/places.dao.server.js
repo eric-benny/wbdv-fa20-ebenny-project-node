@@ -17,6 +17,9 @@ const deletePlacesForCity = (cid) => placesModel.remove({cityId: cid});
 const updatePlace = (pid, place) => placesModel.update({_id: pid},
                                                      {$set: place});
 
+const addTripToPlace = (pid, tid) => placesModel.update({_id: pid},
+                                                       {$push: {trips: tid}});
+
 module.exports = {
     findAllPlaces,
     findPlaceById,
@@ -25,5 +28,6 @@ module.exports = {
     findPlacesForCity,
     deletePlace,
     deletePlacesForCity,
-    updatePlace
+    updatePlace,
+    addTripToPlace
 };
