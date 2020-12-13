@@ -31,7 +31,7 @@ app.use(function(req, res, next) {
 require('./controllers/users.controller.server')(app);
 require('./controllers/cities.controller.server')(app);
 require('./controllers/trips.controller.server')(app);
-// require('./controllers/location.controller.server')(app);
+require('./controllers/places.controller.server')(app);
 // require('./controllers/itinerary.controller.server')(app);
 // require('./controllers/day.controller.server')(app);
 // require('./controllers/activity.controller.server')(app);
