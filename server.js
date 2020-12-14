@@ -6,7 +6,7 @@ app.use(session({
                     resave: false,
                     saveUninitialized: true,
                     secret: 'any string',
-                    cookie: { sameSite: 'none', secure: true }
+                    cookie: { sameSite: 'none' }
                 }));
 
 const mongoose = require('mongoose');
@@ -31,7 +31,7 @@ app.use(bodyParser.json());
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin",
-               "https://wbdv-fa20-ebenny-project-react.herokuapp.com");
+               "http://wbdv-fa20-ebenny-project-react.herokuapp.com");
     res.header("Access-Control-Allow-Headers",
                "Origin, X-Requested-With, Content-Type, Accept");
     res.header("Access-Control-Allow-Methods",
