@@ -20,7 +20,9 @@ module.exports = (app) => {
         usersService.login(req.body)
             .then(user => {
                 if (isNaN(user)) {
-                    req.session["profile"] = user
+                    req.session["profile"] = user;
+                    console.log("on login");
+                    console.log(req.session["profile"]);
                     res.send(user)
                 } else {
                     res.sendStatus(user)
@@ -33,6 +35,7 @@ module.exports = (app) => {
     })
 
     app.get("/api/users/profile", (req, res) => {
+        console.log("on profile");
         console.log(req.session["profile"])
         const user = req.session["profile"];
         if (user) {
