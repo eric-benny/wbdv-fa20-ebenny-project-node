@@ -39,4 +39,4 @@ require('./controllers/places.controller.server')(app);
 // require('./controllers/log.controller.server')(app);
 // require('./controllers/entry.controller.server')(app);
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
