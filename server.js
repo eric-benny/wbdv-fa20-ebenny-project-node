@@ -6,7 +6,7 @@ app.use(session({
                     resave: false,
                     saveUninitialized: true,
                     secret: 'any string',
-                    cookie: { sameSite: 'none', secure: false }
+                    cookie: { sameSite: 'none', secure: true }
                 }));
 
 const mongoose = require('mongoose');
