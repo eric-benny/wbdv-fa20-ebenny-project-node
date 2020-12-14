@@ -5,11 +5,12 @@ const session = require('express-session')
 app.use(session({
                     resave: false,
                     saveUninitialized: true,
-                    secret: 'any string'
+                    secret: 'any string',
+                    cookie: { sameSite: 'none' }
                 }));
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/traveler',
+mongoose.connect('mongodb+srv://ebenny:ebenny123@wbdv-fa20-ebenny-projec.afo3z.mongodb.net/traveler?retryWrites=true&w=majority',
                  {useNewUrlParser: true,
                      useUnifiedTopology: true});
 
