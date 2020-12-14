@@ -14,10 +14,10 @@ const deletePlace = (pid) => placesModel.remove({_id: pid});
 
 const deletePlacesForCity = (cid) => placesModel.remove({cityId: cid});
 
-const updatePlace = (pid, place) => placesModel.update({_id: pid},
+const updatePlace = (pid, place) => placesModel.updateOne({_id: pid},
                                                      {$set: place});
 
-const addTripToPlace = (pid, tid) => placesModel.update({_id: pid},
+const addTripToPlace = (pid, tid) => placesModel.updateOne({_id: pid},
                                                        {$push: {trips: tid}});
 
 module.exports = {

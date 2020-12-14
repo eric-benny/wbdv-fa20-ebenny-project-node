@@ -11,11 +11,13 @@ const findPlacesForCity = (cid) => placesDao.findPlacesForCity(cid);
 const createPlaceForUser = (uid, cid, place) => {
     const newPlace = {
         infoId: place.id,
+        infoType: place.idType,
         userId: uid,
         cityId: cid,
         name: place.name,
         type: place.type,
         details: place.details,
+        icon: place.icon,
         notes: ''
     };
     return placesDao.createPlace(newPlace)

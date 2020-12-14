@@ -10,7 +10,7 @@ const createCity = (city) => citiesModel.create(city);
 
 const deleteCity = (cid) => citiesModel.remove({_id: cid});
 
-const updateCity = (cid, city) => citiesModel.update({_id: cid},
+const updateCity = (cid, city) => citiesModel.updateOne({_id: cid},
                                                      {$set: city});
 
 module.exports = {

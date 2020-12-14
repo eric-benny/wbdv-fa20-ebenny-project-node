@@ -8,6 +8,9 @@ const findUserLogin = (username, password) => usersModel.findOne({username: user
 
 const findUsername = (username) => usersModel.findOne({username: username});
 
-const createUser = (user) => usersModel.create(user)
+const createUser = (user) => usersModel.create(user);
 
-module.exports = { findAllUsers, addUser, findUserLogin, findUsername, createUser };
+const updateUser = (uid, user) => usersModel.updateOne({_id: uid},
+                                                     {$set: user});
+
+module.exports = { findAllUsers, addUser, findUserLogin, findUsername, createUser, updateUser };

@@ -10,6 +10,7 @@ module.exports = (app) => {
         usersService.register(req.body)
             .then(user => {
                 if (isNaN(user)) {
+                    req.session["profile"] = user;
                     res.send(user)
                 } else {
                     res.sendStatus(user)
@@ -21,8 +22,6 @@ module.exports = (app) => {
             .then(user => {
                 if (isNaN(user)) {
                     req.session["profile"] = user;
-                    console.log("on login");
-                    console.log(req.session["profile"]);
                     res.send(user)
                 } else {
                     res.sendStatus(user)
@@ -35,7 +34,6 @@ module.exports = (app) => {
     })
 
     app.get("/api/users/profile", (req, res) => {
-        console.log("on profile");
         console.log(req.session["profile"])
         const user = req.session["profile"];
         if (user) {
@@ -44,4 +42,15 @@ module.exports = (app) => {
             res.send({})
         }
     })
+
+    app.put('/api/users/:uid', (req, res) =>
+        usersService.updateUser(req.params.uid, req.body)
+            .then(user => {
+                if (isNaN(user)) {
+                    req.session["profile"] = user;
+                    res.send(user)
+                } else {
+                    res.sendStatus(user)
+                }
+            }));
 };

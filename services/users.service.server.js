@@ -8,8 +8,9 @@ const register = (userDetails) => {
     const firstName = userDetails.firstName;
     const lastName = userDetails.lastName;
     const email = userDetails.email;
+    const admin = userDetails.admin;
 
-    const user = {username, password, firstName, lastName, email};
+    const user = {username, password, firstName, lastName, email, admin};
 
     return usersDao.findUsername(username)
         .then(existingUser => {
@@ -37,4 +38,6 @@ const login = (userCredentials) => {
         })
 };
 
-module.exports = { findAllUsers, register, login };
+const updateUser = (uid, user) => usersDao.updateUser(uid, user)
+
+module.exports = { findAllUsers, register, login, updateUser };
