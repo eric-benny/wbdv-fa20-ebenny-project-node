@@ -35,7 +35,7 @@ app.use(bodyParser.json());
 // http://localhost:3001
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin",
-               "https://wbdv-fa20-ebenny-project-react.herokuapp.com");
+               "http://wbdv-fa20-ebenny-project-react.herokuapp.com");
     res.header("Access-Control-Allow-Headers",
                "Origin, X-Requested-With, Content-Type, Accept");
     res.header("Access-Control-Allow-Methods",
