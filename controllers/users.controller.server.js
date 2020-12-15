@@ -31,17 +31,17 @@ module.exports = (app) => {
     app.get("/api/users/logout", (req, res) => {
         req.session.destroy();
         res.sendStatus(200)
-    })
+    });
 
     app.get("/api/users/profile", (req, res) => {
-        console.log(req.session["profile"])
+        console.log(req.session["profile"]);
         const user = req.session["profile"];
         if (user) {
             res.send(user)
         } else {
             res.send({})
         }
-    })
+    });
 
     app.put('/api/users/:uid', (req, res) =>
         usersService.updateUser(req.params.uid, req.body)

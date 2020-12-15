@@ -38,6 +38,6 @@ const login = (userCredentials) => {
         })
 };
 
-const updateUser = (uid, user) => usersDao.updateUser(uid, user)
+const updateUser = (uid, user) => usersDao.updateUser(uid, user);
 
 module.exports = { findAllUsers, register, login, updateUser };

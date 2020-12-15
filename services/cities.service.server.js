@@ -14,9 +14,9 @@ const createCityForUser = (uid, city) => {
         country: city.country,
         state: city.state,
         notes: ''
-    }
+    };
     return citiesDao.createCity(newCity)
-}
+};
 
 const deleteCity = (cid) => citiesDao.deleteCity(cid);
 

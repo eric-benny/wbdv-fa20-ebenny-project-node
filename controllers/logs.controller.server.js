@@ -25,4 +25,4 @@ module.exports = (app) => {
     app.put('/api/logs/:lid', (req, res) =>
         logService.updateLog(req.params.lid, req.body)
             .then(log => res.send(log)));
-}
+};
