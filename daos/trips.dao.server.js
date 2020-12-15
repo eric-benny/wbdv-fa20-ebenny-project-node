@@ -21,6 +21,8 @@ const addAttendeeToTrip = (tid, uid) => tripsModel.updateOne({_id: tid},
 
 const findAllTripsAttendingForUser = (userId) => tripsModel.find({attendees: userId});
 
+const findRecentTrips = () => tripsModel.find().sort({date: -1}).limit(10);
+
 module.exports = {
     findAllTrips,
     findTripById,
@@ -30,5 +32,6 @@ module.exports = {
     addCityToTrip,
     updateTrip,
     addAttendeeToTrip,
-    findAllTripsAttendingForUser
+    findAllTripsAttendingForUser,
+    findRecentTrips
 };

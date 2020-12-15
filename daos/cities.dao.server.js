@@ -13,11 +13,16 @@ const deleteCity = (cid) => citiesModel.remove({_id: cid});
 const updateCity = (cid, city) => citiesModel.updateOne({_id: cid},
                                                      {$set: city});
 
+const topCities = () => citiesModel.aggregate([{"$group":{_id:"$name", count:{$sum:1}}}])
+    .sort({count: -1})
+    .limit(10);
+
 module.exports = {
     findAllCities,
     findCityById,
     findCitiesForUser,
     createCity,
     deleteCity,
-    updateCity
+    updateCity,
+    topCities
 };

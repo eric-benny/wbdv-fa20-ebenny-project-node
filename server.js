@@ -48,10 +48,7 @@ require('./controllers/users.controller.server')(app);
 require('./controllers/cities.controller.server')(app);
 require('./controllers/trips.controller.server')(app);
 require('./controllers/places.controller.server')(app);
-// require('./controllers/itinerary.controller.server')(app);
-// require('./controllers/day.controller.server')(app);
-// require('./controllers/activity.controller.server')(app);
-// require('./controllers/log.controller.server')(app);
-// require('./controllers/entry.controller.server')(app);
+require('./controllers/activities.controller.server')(app);
+require('./controllers/logs.controller.server')(app);
 
 app.listen(process.env.PORT || 3000);

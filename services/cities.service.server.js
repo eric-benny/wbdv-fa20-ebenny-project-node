@@ -22,11 +22,14 @@ const deleteCity = (cid) => citiesDao.deleteCity(cid);
 
 const updateCity = (cid, city) => citiesDao.updateCity(cid, city);
 
+const topCities = () => citiesDao.topCities();
+
 module.exports = {
     findAllCities,
     findCityById,
     findCitiesForUser,
     createCityForUser,
     deleteCity,
-    updateCity
+    updateCity,
+    topCities
 };

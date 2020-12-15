@@ -18,6 +18,8 @@ const addAttendeeToTrip = (tid, uid) => tripsDao.addAttendeeToTrip(tid, uid);
 
 const findAllTripsAttendingForUser = (uid) => tripsDao.findAllTripsAttendingForUser(uid);
 
+const findRecentTrips = () => tripsDao.findRecentTrips();
+
 module.exports = {
     findAllTrips,
     findTripById,
@@ -27,5 +29,6 @@ module.exports = {
     addCityToTrip,
     updateTrip,
     addAttendeeToTrip,
-    findAllTripsAttendingForUser
+    findAllTripsAttendingForUser,
+    findRecentTrips
 };

@@ -20,6 +20,10 @@ const updatePlace = (pid, place) => placesModel.updateOne({_id: pid},
 const addTripToPlace = (pid, tid) => placesModel.updateOne({_id: pid},
                                                        {$push: {trips: tid}});
 
+const topPlaces = () => placesModel.aggregate([{"$group":{_id:"$name", count:{$sum:1}}}])
+    .sort({count: -1})
+    .limit(10);
+
 module.exports = {
     findAllPlaces,
     findPlaceById,
@@ -29,5 +33,6 @@ module.exports = {
     deletePlace,
     deletePlacesForCity,
     updatePlace,
-    addTripToPlace
+    addTripToPlace,
+    topPlaces
 };
